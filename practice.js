@@ -1,32 +1,49 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 
-//Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
+//Create an object called me. Give it a key of name with the value being your name, and 
+//another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
-
-
+var me = {
+  name: "dallin",
+  age: 26
+};
+//alert(me.name);
 
 
 //NEXT PROBLEM
 
 
-
-
-//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
-
-  //Code here
-
-
-//After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
+//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. 
+//Have the values to those keys be your favorite thing in that category.
 
   //Code here
 
+var favoriteThings = {
+  band: "Twenty One Pilots",
+  food: "Curry",
+  person: "Tabitha",
+  book: "Stormlight Archives",
+  movie: "How to Train Your Dragon",
+  holiday: "Thanksgiving"
+};
 
-//Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
+
+
+//After you've made your object, add another key named 'car' with the value being your favorite 
+//car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
 
+favoriteThings.car = "Nissan GTR";
+favoriteThings.brand = "Reebok";
+//Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the 
+//value of the book key in your favoriteThings object to be 'Harry Potter'.
+
+  //Code here
+favoriteThings.food = "Chicken Nuggets";
+favoriteThings.book = "Harry Potter";
 
 
 
@@ -43,17 +60,20 @@ Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
   //Code here
+var backPack = {};
+var item = "firstPocket";
 
+backPack[item] = "chapstick";
 //After you do the above, alert your entire backPack object.
 
   //Code here
-
+//alert(backPack);
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
   //Code here
-
+console.log(backPack);
 
 
 
@@ -62,15 +82,26 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 
-//Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
+//Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. 
+//Fill those properties in with the appropriate values.
 
   //Code Here
-
+var alsoMe = {
+  name: "Dallin",
+  age: 26,
+  height: "5'10",
+  gender: "male",
+  married: "Yes",
+  eyeColor: "Blue",
+  hairColor: "Light brown"
+};
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
 
-
+for (var prop in alsoMe) {
+  //alert(alsoMe[prop]);
+}
 
 
 //NEXT PROBLEM
@@ -78,12 +109,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 
-//Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
+//Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being
+// the length of each song.
 
   //Code Here
 
+var album = {
+  odeToSleep: "5:08",
+  holdingOnToYou: "4:23",
+  migraine: "3:59",
+  houseOfGold: "2:43",
+  carRadio: "4:27"
+};
 //Now, loop through your album object alerting every song title individually.
-
+for (var prop in album) {
+  //alert(album[prop]);
+}
   //Code Here
 
 
@@ -94,14 +135,25 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 
-//Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
+//Create an object called states that has 5 US states as properties with the values being their population 
+//(doesn't have to be accurate).
 
   //Code Here
-
+var states = {
+  wisconsin: 1522094,
+  utah: 2134219,
+  california: 6253223,
+  texas: 289237,
+  minesota: 0
+};
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+for (var prop in states) {
+  if (states[prop] > 30000) {
+    //alert(states[prop]);
+  }
+}
 
 
 
@@ -122,12 +174,20 @@ var user1 = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+  for (var prop in user1) {
+    if (user1[prop] == false || user1[prop] === null || user1[prop] === undefined) {
+      delete user1[prop];
+    }
+  }
 
-//Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
+//Once you get your truthy Object, Change the remaining values in the object to be specific to you 
+//(name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
 
-
+user1.name = "Dallin Jones";
+user1.username = "espalloc";
+console.log(user1);
 
 
 //NEXT PROBLEM
@@ -150,11 +210,13 @@ var user2 = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+user2.name = "Tyler S. McGinnis";
+user2.email = "tyler.mcginnis@devmounta.in";
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
-
+user2.sayEmail();
 
 
 
@@ -166,17 +228,24 @@ var user2 = {
 //Create an empty object called methodCollection.
 
   //Code Here
-
+var methodCollection = {};
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
 
+methodCollection.logHello = function logHello() {
+  console.log("hello");
+}
+methodCollection.alertHello = function alertHello() {
+  alert("hello");
+};
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -188,25 +257,61 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
-
+function makePerson(name, birthday, ssn) {
+  var person = {};
+  person.name = name;
+  person.birthday = birthday;
+  person.ssn = ssn;
+  console.log(person);
+  return person;
+}
 
 //NEXT PROBLEM
 
 
 
-// Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
+// Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a 
+//Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
   //Code Here
 
-
+function makeCard(cardNumber, expirationDate, securityCode) {
+  var card = {};
+  card.cardNumber = cardNumber;
+  card.expirationDate = expirationDate;
+  card.securityCode = securityCode;
+  return card;
+}
 
 //NEXT PROBLEM
 
 
 
-/* As of this point you should have a makePerson and a makeCard function which returns you either a person or a credit card object.
-   Now, create a bindCard function that takes in a person object as its first parameter and a creditcard object as its second parameter.
-   Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard. While Object.assign would give you the answer, specRunner requires an answer without using it.
+/* As of this point you should have a makePerson and a makeCard function 
+which returns you either a person or a credit card object.
+   Now, create a bindCard function that takes in a person object as its 
+   first parameter and a creditcard object as its second parameter.
+   Have bindCard merge the two parameters together into a new object which 
+   contains all the properties from the person as well as the creditcard. 
+   While Object.assign would give you the answer, specRunner requires an answer
+    without using it.
 */
 
   //Code Here
+// function bindCard(person, card) {
+//   console.log(card);
+//   console.log(person);
+//   var combine = Object.assign({}, card, person);
+//   return combine;
+// }
+
+function bindCard(person, card) {
+  var bind = {};
+  for (var prop in person) {
+    bind[prop] = person[prop];
+  }
+  for (var prop in card) {
+    bind[prop] = card[prop];
+  }
+  return bind;
+ }
